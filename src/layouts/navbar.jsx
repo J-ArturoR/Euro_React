@@ -12,16 +12,17 @@ const NavBarEuro= () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="m-auto" >
             <Nav.Link as={Link} to="/" >Inicio</Nav.Link>
-            
+
             <NavDropdown title="Marketing" id="basic-nav-dropdown">
               <NavDropdown.Item as={Link} to="/flyers" >Flyers</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/catalogos" >Catalogos</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/protocolos" >Protocolos de Higiene</NavDropdown.Item>
 							<NavDropdown.Divider />
             </NavDropdown>
 
             <NavDropdown title="Destinos" id="basic-nav-dropdown">
-              <NavDropdown.Item as={Link} to="/circuitos" >Circuitos</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/destinos" >Nacionales</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/circuitos">Circuitos</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/destinos" >Destinos</NavDropdown.Item>
 							<NavDropdown.Divider />
             </NavDropdown>
 

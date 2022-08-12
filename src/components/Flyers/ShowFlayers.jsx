@@ -2,9 +2,7 @@ import React,{useEffect, useState} from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
-
 const endpoint='http://localhost:8000/api'
-
 
 export const ShowFlayer = () => {
     const [flyer,setFlayers]=useState([])
@@ -49,7 +47,7 @@ export const ShowFlayer = () => {
 								<td>{flyers.salidas}</td>
 								<td>{flyers.personalizable}</td>
 								<td>{flyers.status.name_status}</td>
-						</tr>
+							</tr>
 						))}
 						
 					</tbody>

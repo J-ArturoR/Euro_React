@@ -26,7 +26,7 @@ export const ShowCatalogo = () => {
     	<div>
 				<h1>Catalogos</h1>
 				<div className='g-grid grap-2'>
-					<Link to="/create/catalogo" className='btn btn-success btn-lg mt-2 text-white'>Crear Catalogo</Link>
+					<Link to="/create/catalogo" className='TH'>Crear Catalogo</Link>
 				</div>
 
 				<table className='table'>
@@ -42,7 +42,11 @@ export const ShowCatalogo = () => {
 							<tr key={catalogos.id}>
 								<td>{catalogos.nombre_catalogo}</td>
 								<td>{catalogos.archivo}</td>
-								{catalogos.status.map((status)=><td key={status.id} >{status.name_status} </td> )}
+								<td>{catalogos.status.name_status} </td>
+								<td>
+                  <Link to={`/edit/${catalogo.id}`} className='btn btn-warning'>Editar</Link>
+                  <button onClick={()=>deleteCatalogo(catalogo.id)} className='btn btn-danger'>Delete</button>
+                </td>
 							</tr>
 						))}
 					</tbody>
