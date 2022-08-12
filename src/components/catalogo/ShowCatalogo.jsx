@@ -45,7 +45,6 @@ export const ShowCatalogo = () => {
 								{catalogos.status.map((status)=><td key={status.id} >{status.name_status} </td> )}
 							</tr>
 						))}
-						
 					</tbody>
 				</table>
 			</div>
