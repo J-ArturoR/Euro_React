@@ -5,15 +5,25 @@ import { BrowserRouter,Routes, Route, Navigate  } from 'react-router-dom';
 //import Menu
 import NavEuromundo from './layouts/navbar';
 //import componentes
-import { ShowDestinos } from './components/Destinos/ShowDestinos';
-import { ShowCircuitos } from './components/Circuitos/ShowCircuitos';
-import {ShowCatalogo} from './components/catalogo/ShowCatalogo';
+//FLYERS
+  import { ShowFlayer } from './components/Flyers/ShowFlayers';
+  import CreateFlyer from './components/Flyers/CreateFlyer';
+  import EditFlayer from './components/Flyers/EditFlayer';
+//END FLYERS
+//DESTINOS
+  import { ShowDestinos } from './components/Destinos/ShowDestinos';
+//END DESTINOS
+//CIRCUITOS
+  import { ShowCircuitos } from './components/Circuitos/ShowCircuitos';
+//ENDCIRCUITOS
+//CATALOGOS
+  import {ShowCatalogo} from './components/catalogo/ShowCatalogo';
+//CATALOGOS
+
 
 import {ShowProtocolos} from './components/Protocolos/ShowProtocolos';
 
-import { ShowFlayer } from './components/Flyers/ShowFlayers';
-import CreateFlyer from './components/Flyers/CreateFlyer';
-import EditFlayer from './components/Flyers/EditFlayer';
+
 function App() {
   return (
     <div className="App">
@@ -21,16 +31,25 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<NavEuromundo />}>
-
-            
+            { /*MARKETING FLYERS*/}
+              <Route path='flyers' element={<ShowFlayer />}/>
+              <Route path='add/flyer' element={<CreateFlyer />} />
+              <Route path='edit/flyer/:id' element={<EditFlayer />} />
+            { /*END MARKETING FLYERS*/}
+            {/*CATALOGOS */}
             <Route path='catalogos' element={<ShowCatalogo />}/>
-            <Route path='flyers' element={<ShowFlayer />}/>
-            <Route path='add/flyer' element={<CreateFlyer />} />
-            <Route path='edit/flyer/:id' element={<EditFlayer />} />
+            {/*END CATALOGOS */}
+            {/*PROTOCOLOS */}
             <Route path='protocolos' element={<ShowProtocolos />}/>
-
-            <Route path='circuitos' element={<ShowCircuitos />} />
+            {/*END PROTOCOLOS */} 
+            {/*DESTINOS */}
             <Route path='destinos' element={<ShowDestinos />} />
+            {/*END DESTINOS */}
+            {/*CIRCUITOS */}
+            <Route path='circuitos' element={<ShowCircuitos />} />
+            {/*END CIRCUITOS */}
+
+            {/* RUTA QUE NO EXISTA */}
             <Route path='*' element={ <Navigate replace to="/" />} />
             
           </Route>

@@ -61,7 +61,12 @@ const EditFlayer = () => {
 					<input type="text" value={titulo_flyer} onChange={(e)=> setTitulo(e.target.value)} className='form-control'/>
 					
 					<label for="Titulo de Flyer"className='form-label'>Status</label>
-					<input type="number" value={status_id} onChange={(e)=> setStatus(e.target.value)} className='form-control'/>
+					{/*<input type="number" value={status_id} onChange={(e)=> setStatus(e.target.value)} className='form-control'/>*/}
+					<select value={status_id} onChange={(e)=> setStatus(e.target.value)} name="Status" id="" >
+						<option value="">----</option>
+						<option value="1">Activo</option>
+						<option value="2">No Activo</option>
+					</select>
 				
 					<label for="Titulo de Flyer"className='form-label'>Personalizable</label>
 					<input type="text" value={personalizable} onChange={(e)=> setPersonalizable(e.target.value)} className='form-control'/>
