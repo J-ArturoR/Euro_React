@@ -16,7 +16,7 @@ export const ShowFlayer = () => {
 			}
 
 			const deleteFlayer=async(id)=>{
-				await axios.delete(`${endpoint}/destroy/${id}`)
+				await axios.delete(`${endpoint}/flyer/destroy/${id}`)
 				getAllFlayers()
 			}
 
@@ -24,7 +24,7 @@ export const ShowFlayer = () => {
     <div>
 			<h1>Flayers</h1>
 				<div className='g-grid grap-2'>
-					<Link to="/add/flayer" className='btn btn-success btn-lg mt-2 text-white'>Agregar Flayer</Link>
+					<Link to="/add/flyer" className='btn btn-success btn-lg mt-2 text-white'>Agregar Flayer</Link>
 				</div>
 
 				<table className='table'>
@@ -36,6 +36,8 @@ export const ShowFlayer = () => {
 							<th>Salidas</th>
 							<th>Personalizable</th>
 							<th>Status</th>
+							<th>Acciones</th>
+
 						</tr>
 					</thead>
 					<tbody>
@@ -47,9 +49,12 @@ export const ShowFlayer = () => {
 								<td>{flyers.salidas}</td>
 								<td>{flyers.personalizable}</td>
 								<td>{flyers.status.name_status}</td>
+								<td>
+									<Link to={`/edit/flyer/${flyers.id}`} className='btn btn-warning'>Editar</Link>
+									<button onClick={()=>deleteFlayer(flyers.id)} className='btn btn-danger'>Delete</button>
+								</td>
 							</tr>
 						))}
-						
 					</tbody>
 				</table>
 				
